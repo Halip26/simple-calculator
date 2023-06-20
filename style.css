@@ -51,12 +51,12 @@ body {
 
 .btn input[type="button"] {
   width: 90px;
+  height: 60px;
   padding: 2px;
   margin: 2px 0px;
   position: relative;
   left: 13px;
   top: 20px;
-  height: 60px;
   cursor: pointer;
   font-size: 18px;
   transition: 0.5s;
@@ -68,4 +68,14 @@ body {
 .btn input[type="button"]:hover {
   background-color: black;
   color: white;
+}
+
+.btn input[value="C"] {
+  background-color: #da2c15;
+  font-size: 20px;
+}
+
+.btn input[value="="] {
+  background-color: #7115da;
+  font-size: 30px;
 }
