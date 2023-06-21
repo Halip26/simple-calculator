@@ -31,12 +31,13 @@ body {
   position: absolute;
   border: 5px solid #590c5d;
   border-radius: 6px;
+  padding-top: 20px;
 }
 
 .main input[type="text"] {
   width: 88%;
   position: relative;
-  height: 80px;
+  height: 70px;
   top: 5px;
   text-align: right;
   padding: 3px 6px;
@@ -61,8 +62,8 @@ body {
   font-size: 18px;
   transition: 0.5s;
   background-color: #2e1f3b;
-  border-radius: 6px;
   color: white;
+  border-radius: 6px;
 }
 
 .btn input[type="button"]:hover {
@@ -70,12 +71,17 @@ body {
   color: white;
 }
 
-.btn input[value="C"] {
+.btn input[value="="] {
   background-color: #da2c15;
   font-size: 20px;
 }
 
-.btn input[value="="] {
-  background-color: #7115da;
-  font-size: 30px;
+.btn input[value="C"] {
+  background-color: #401077;
+}
+.btn input[value="%"] {
+  background-color: #401077;
+}
+.btn input[value="←"] {
+  background-color: #401077;
 }
