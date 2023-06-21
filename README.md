@@ -4,25 +4,6 @@
 
 This is a simple calculator project that performs basic mathematical operations such as addition, subtraction, multiplication, and division. It is designed as a web application using HTML, CSS, and JavaScript.
 
-<p align="center"><img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" style="width:100%"  /></p>
-
----
-
-- 📫 How to reach me: &nbsp; [![Linkedin Badge](https://img.shields.io/badge/-Halipuddin%20Hambali-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/halipuddin/)
-
----
-
-### 🛠 &nbsp;Languages and Tools
-
-<p>
-<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
-
-<img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg" title="VSCode" alt="VSCode" width="40" height="40"/>&nbsp;
-
-</p>
-
----
-
 # simple-calculator
 
 simple-calculator with html css & js
@@ -60,4 +41,24 @@ cd simple-calculator
 - Subtraction
 - Multiplication
 - Division
-**
+
+---
+<p align="center"><img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" style="width:100%"  /></p>
+
+### 🛠 &nbsp;Languages and Tools
+
+<p>
+<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
+
+<img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg" title="VSCode" alt="VSCode" width="40" height="40"/>&nbsp;
+
+</p>
+
+---
+
+### Contact
+
+- 📫 How to reach me: &nbsp; [![Linkedin Badge](https://img.shields.io/badge/-Halipuddin%20Hambali-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/halipuddin/)
+
+---
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
