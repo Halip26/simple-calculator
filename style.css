@@ -36,8 +36,8 @@ body {
 
 .main input[type="text"] {
   width: 88%;
-  position: relative;
   height: 70px;
+  position: relative;
   top: 5px;
   text-align: right;
   padding: 3px 6px;
@@ -84,4 +84,29 @@ body {
 }
 .btn input[value="←"] {
   background-color: #401077;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    margin-top: 40px;
+  }
+
+  .main {
+    margin-top: 10px;
+    width: 300px;
+    height: 350px;
+  }
+
+  .main input[type="text"] {
+    width: 85%;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .btn input[type="button"] {
+    width: 65px;
+    height: 45px;
+    top: 15px;
+    font-size: 16px;
+  }
 }
