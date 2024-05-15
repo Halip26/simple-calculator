@@ -10,6 +10,12 @@ function Solve(val) {
 function Result() {
   // Ambil nilai elemen input dengan ID "inputResult"
   let num1 = document.getElementById("inputResult").value;
+
+  // Replace percentage expressions with their evaluated values
+  num1 = num1.replace(/(\d+(\.\d+)?)%/g, function (match, p1) {
+    return (parseFloat(p1) / 100).toString();
+  });
+
   // Evaluasi nilai elemen input sebagai ekspresi JavaScript menggunakan fungsi eval()
   let num2 = eval(num1);
   // Atur nilai elemen input menjadi hasil evaluasi
