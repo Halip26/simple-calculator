@@ -12,7 +12,7 @@ function Result() {
   let num1 = document.getElementById("inputResult").value;
 
   // Replace percentage expressions with their evaluated values
-  num1 = num1.replace(/(\d+(\.\d+)?)%/g, function (match, p1) {
+  num1 = num1.replace(/(\d+(\.\d+)?)%/g, function (p1) {
     return (parseFloat(p1) / 100).toString();
   });
 
