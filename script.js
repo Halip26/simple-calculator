@@ -1,9 +1,9 @@
 // Fungsi Solve yang menerima satu argumen val
 function Solve(val) {
   // Ambil elemen HTML input dengan ID "inputResult"
-  let v = document.getElementById("inputResult");
+  let inputResult = document.getElementById("inputResult");
   // Tambahkan nilai argumen val ke nilai elemen input
-  v.value += val;
+  inputResult.value += val;
 }
 
 // Fungsi Result yang tidak menerima argumen apapun
