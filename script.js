@@ -1,14 +1,14 @@
-// Fungsi Solve yang menerima satu argumen val
-function Solve(val) {
-  // Ambil elemen HTML input dengan ID "inputResult"
+// Solve function that accepts one val argument
+function Solve(buttons) {
+  // Retrieve the input HTML element with ID “inputResult”
   let inputResult = document.getElementById("inputResult");
-  // Tambahkan nilai argumen val ke nilai elemen input
-  inputResult.value += val;
+  // Add the value of the val argument to the value of the input element
+  inputResult.value += buttons;
 }
 
-// Fungsi Result yang tidak menerima argumen apapun
+// Result function that does not accept any arguments
 function Result() {
-  // Ambil nilai elemen input dengan ID "inputResult"
+  // Retrieve the value of the input element with ID ‘inputResult’
   let num1 = document.getElementById("inputResult").value;
 
   // Replace percentage expressions with their evaluated values
@@ -16,24 +16,24 @@ function Result() {
     return (parseFloat(p1) / 100).toString();
   });
 
-  // Evaluasi nilai elemen input sebagai ekspresi JavaScript menggunakan fungsi eval()
+  // Evaluate the input element value as a JavaScript expression using the eval() function
   let num2 = eval(num1);
-  // Atur nilai elemen input menjadi hasil evaluasi
+  // Set the input element value to be the evaluation result
   document.getElementById("inputResult").value = num2;
 }
 
-// Fungsi Clear yang tidak menerima argumen apapun
+// Clear function that does not accept any arguments
 function Clear() {
-  // Ambil elemen HTML input dengan ID "inputResult"
-  let inp = document.getElementById("inputResult");
-  // Bersihkan nilai elemen input
-  inp.value = "";
+  // Retrieve the input HTML element with ID ‘inputResult’
+  let inputted = document.getElementById("inputResult");
+  // Clear input element values
+  inputted.value = "";
 }
 
-// Fungsi Back yang tidak menerima argumen apapun
+// Back function that does not accept any arguments
 function Back() {
-  // Ambil elemen HTML input dengan ID "inputResult"
+  // Retrieve the input HTML element with ID ‘inputResult’
   let ev = document.getElementById("inputResult");
-  // Hapus karakter terakhir dari nilai elemen input
+  // Remove the last character from the input element value
   ev.value = ev.value.slice(0, -1);
 }
