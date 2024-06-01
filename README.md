@@ -50,10 +50,15 @@ cd simple-calculator
   <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg" title="VSCode" alt="VSCode" width="40" height="40"/>&nbsp;
 </p>
 
-### The expression `/(\d+(\.\d+)?)%/g` is a regular expression (regex) used to match patterns in a string. Let's break it down
+<p>
+<img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg" title="VSCode" alt="VSCode" width="40" height="40"/>&nbsp;
+</p>
+
+### Using regular expression (regex)
+
+  The expression `/(\d+(\.\d+)?)%/g` is a  used to match patterns in a string, Let's break it down:
 
 - `/ ... /`: This denotes the start and end of the regular expression.
 - `\d+`: This matches one or more digits. `\d` is a shorthand for any digit (0-9), and `+` means one or more of the preceding element.
