@@ -4,25 +4,23 @@ function Solve(buttons) {
   // Append the button value to the current input value
   inputResult.value += buttons;
 
-  // Remove commas for reformatting
+  // Remove commas for reformatting but keep the decimal point
   let currentValue = inputResult.value.replace(/,/g, "");
 
   // Separate the numbers and operators using regex
   let parts = currentValue.split(/([+\-*/%])/);
 
-  // If the button pressed is a number or a decimal point
-  if (!isNaN(buttons) || buttons === ",") {
-    // Format all number parts with commas as thousand separators
-    parts = parts.map((part) => {
-      if (!isNaN(part) && part !== "") {
-        return Number(part).toLocaleString("en-US");
-      }
-      return part;
-    });
+  // Format all number parts with commas as thousand separators, except for decimal numbers
+  parts = parts.map((part) => {
+    if (!isNaN(part) && part !== "" && part.indexOf(".") === -1) {
+      // Format only numbers without decimal points
+      return Number(part).toLocaleString("en-US");
+    }
+    return part;
+  });
 
-    // Update the input with formatted numbers and unformatted operators
-    inputResult.value = parts.join("");
-  }
+  // Update the input with formatted numbers and unformatted operators
+  inputResult.value = parts.join("");
 }
 
 function Result() {
