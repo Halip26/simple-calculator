@@ -82,10 +82,11 @@ h1 a:hover::before {
   top: 20px;
   cursor: pointer;
   font-size: 18px;
-  transition: 0.5s;
+  transition: ease 0.2s;
   background-color: #2e1f3b;
   color: white;
   border-radius: 6px;
+  
 }
 
 .btn input[type="button"]:hover {
@@ -94,7 +95,7 @@ h1 a:hover::before {
 }
 
 .btn input[value="="] {
-  background-color: #da2c15;
+  background-color: #1571da;
   font-size: 20px;
 }
 
@@ -110,6 +111,7 @@ h1 a:hover::before {
   height: 59px;
 }
 
+/* makes it responsive to adjust the width of the device */
 @media only screen and (max-width: 600px) {
   .title {
     margin-top: 40px;
