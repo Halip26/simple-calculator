@@ -2,12 +2,27 @@ let isCalculated = false;
 
 // Auto-blur any clicked button to prevent browser focus click issues with the Enter key
 document.addEventListener("DOMContentLoaded", () => {
+  // Restore saved session if it exists
+  const savedInput = localStorage.getItem("calculator_input");
+  const savedIsCalculated = localStorage.getItem("calculator_isCalculated");
+  if (savedInput !== null) {
+    document.getElementById("inputResult").value = savedInput;
+  }
+  if (savedIsCalculated !== null) {
+    isCalculated = savedIsCalculated === "true";
+  }
+
   document.querySelectorAll('.btn input[type="button"]').forEach((button) => {
     button.addEventListener("click", () => {
       button.blur();
     });
   });
 });
+
+function saveSession() {
+  localStorage.setItem("calculator_input", document.getElementById("inputResult").value);
+  localStorage.setItem("calculator_isCalculated", isCalculated);
+}
 
 function Solve(buttonValue) {
   let inputResult = document.getElementById("inputResult");
@@ -29,6 +44,7 @@ function Solve(buttonValue) {
     if (currentValue === "") {
       if (buttonValue === "-") {
         inputResult.value = "-";
+        saveSession();
       }
       return;
     }
@@ -36,6 +52,7 @@ function Solve(buttonValue) {
     let lastChar = currentValue.slice(-1);
     if (operators.includes(lastChar)) {
       inputResult.value = currentValue.slice(0, -1) + buttonValue;
+      saveSession();
       return;
     }
   }
@@ -66,6 +83,7 @@ function Solve(buttonValue) {
   });
 
   inputResult.value = parts.join("");
+  saveSession();
 }
 
 function Result() {
@@ -103,11 +121,14 @@ function Result() {
     inputResultElement.value = "Error";
     isCalculated = true;
   }
+  saveSession();
 }
 
 function Clear() {
   document.getElementById("inputResult").value = "";
   isCalculated = false;
+  localStorage.removeItem("calculator_input");
+  localStorage.removeItem("calculator_isCalculated");
 }
 
 function Back() {
@@ -118,6 +139,7 @@ function Back() {
   } else {
     inputResult.value = inputResult.value.slice(0, -1);
   }
+  saveSession();
 }
 
 // ── Keyboard Support ──────────────────────────────────────────────────────────
