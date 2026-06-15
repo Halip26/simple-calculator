@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator by Mr. Halip</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" href="calculator.png" type="image/x-icon" />
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <!-- shortcut icon -->
+    <link
+      rel="shortcut icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Calculator_icon.svg/2048px-Calculator_icon.svg.png"
+      type="image/x-icon"
+    />
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Simple Calculator by Mr. Halip: A fast, easy-to-use online calculator for quick calculations. Free and accessible on any device."
+    />
+    <link rel="canonical" href="https://halip26.github.io/simple-calculator/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Simple Calculator by Mr. Halip" />
+    <meta
+      property="og:description"
+      content="A fast, easy-to-use online calculator for quick calculations. Free and accessible on any device."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://halip26.github.io/simple-calculator/"
+    />
+    <meta property="og:site_name" content="Simple Calculator by Mr. Halip" />
+    <meta
+      property="og:image"
+      content="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Calculator_icon.svg/2048px-Calculator_icon.svg.png"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@halip26" />
+    <meta name="twitter:creator" content="@halip26" />
+    <meta name="twitter:title" content="Simple Calculator by Mr. Halip" />
+    <meta
+      name="twitter:description"
+      content="A fast, easy-to-use online calculator for quick calculations. Free and accessible on any device."
+    />
+    <meta
+      name="twitter:image"
+      content="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Calculator_icon.svg/2048px-Calculator_icon.svg.png"
+    />
+    <meta
+      name="twitter:url"
+      content="https://halip26.github.io/simple-calculator/"
+    />
+  </head>
+
+  <body>
+    <div class="calculator-container">
+      <header class="title">
+        <h1>
+          Simple Calculator <br />
+          <span class="author"
+            >by
+            <a target="_blank" href="https://halip26.github.io/"
+              >Mr. Halip</a
+            ></span
+          >
+        </h1>
+      </header>
+
+      <main class="main">
+        <div class="display-wrapper">
+          <input placeholder="0" type="text" id="inputResult" readonly />
+        </div>
+        <div class="btn">
+          <input type="button" value="C" onclick="Clear()" class="btn-clear" />
+          <input
+            type="button"
+            value="%"
+            onclick="Solve('%')"
+            class="btn-function"
+          />
+          <input
+            type="button"
+            value="&larr;"
+            onclick="Back()"
+            class="btn-back"
+          />
+          <input
+            type="button"
+            value="/"
+            onclick="Solve('/')"
+            class="btn-operator"
+          />
+
+          <input
+            type="button"
+            value="7"
+            onclick="Solve('7')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="8"
+            onclick="Solve('8')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="9"
+            onclick="Solve('9')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="x"
+            onclick="Solve('*')"
+            class="btn-operator"
+          />
+
+          <input
+            type="button"
+            value="4"
+            onclick="Solve('4')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="5"
+            onclick="Solve('5')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="6"
+            onclick="Solve('6')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="-"
+            onclick="Solve('-')"
+            class="btn-operator"
+          />
+
+          <input
+            type="button"
+            value="1"
+            onclick="Solve('1')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="2"
+            onclick="Solve('2')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="3"
+            onclick="Solve('3')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="+"
+            onclick="Solve('+')"
+            class="btn-operator"
+          />
+
+          <input
+            type="button"
+            value="00"
+            onclick="Solve('00')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="0"
+            onclick="Solve('0')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="."
+            onclick="Solve('.')"
+            class="btn-number"
+          />
+          <input
+            type="button"
+            value="="
+            onclick="Result()"
+            class="btn-equals"
+          />
+        </div>
+
+        <div class="keyboard-hint">
+          <span class="keyboard-icon">⌨️</span>
+          <span class="hint-text"
+            >Keyboard enabled: 0-9, +, -, *, /, Enter, Esc, Backspace</span
+          >
+        </div>
+      </main>
+    </div>
+
+    <!-- script -->
+    <script src="script.js"></script>
+  </body>
+</html>

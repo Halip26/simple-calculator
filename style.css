@@ -1,0 +1,335 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Share+Tech+Mono&display=swap");
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #0b0f19 0%, #161d30 100%);
+  --calc-bg: rgba(22, 29, 48, 0.75);
+  --calc-border: rgba(255, 255, 255, 0.08);
+  --calc-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 45px rgba(99, 102, 241, 0.08);
+
+  /* HSL Palette for clean, cohesive styles */
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+
+  /* Button Styles */
+  --btn-num-bg: rgba(255, 255, 255, 0.04);
+  --btn-num-hover: rgba(255, 255, 255, 0.09);
+  --btn-num-color: #f1f5f9;
+
+  --btn-op-bg: rgba(99, 102, 241, 0.15);
+  --btn-op-hover: rgba(99, 102, 241, 0.28);
+  --btn-op-color: #a5b4fc;
+
+  --btn-fn-bg: rgba(148, 163, 184, 0.1);
+  --btn-fn-hover: rgba(148, 163, 184, 0.2);
+  --btn-fn-color: #cbd5e1;
+
+  --btn-danger-bg: rgba(239, 68, 68, 0.15);
+  --btn-danger-hover: rgba(239, 68, 68, 0.28);
+  --btn-danger-color: #fca5a5;
+
+  --btn-eq-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --btn-eq-hover: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --btn-eq-color: #ffffff;
+
+  --keyboard-active: #ff6b35;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--color-text-main);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* Container */
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Header/Title styling */
+.title {
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.title .author {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.title a {
+  color: crimson;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.title a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  bottom: -2px;
+  left: 0;
+  background-color: crimson;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.title a:hover {
+  color: #e7234a;
+}
+
+.title a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Calculator Card */
+.main {
+  width: 100%;
+  background: var(--calc-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--calc-border);
+  border-radius: 24px;
+  box-shadow: var(--calc-shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.main:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 30px 60px -15px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(99, 102, 241, 0.12);
+}
+
+/* Display */
+.display-wrapper {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.display-wrapper input[type="text"] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f8fafc;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 36px;
+  text-align: right;
+  letter-spacing: -0.5px;
+}
+
+.display-wrapper input[type="text"]::placeholder {
+  color: rgba(248, 250, 252, 0.651);
+}
+
+/* Button Grid */
+.btn {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Base button styles */
+.btn input[type="button"] {
+  border: none;
+  outline: none;
+  height: 62px;
+  border-radius: 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn input[type="button"]:active {
+  transform: scale(0.95);
+}
+
+/* Number buttons style */
+.btn-number {
+  background: var(--btn-num-bg);
+  color: var(--btn-num-color);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.btn-number:hover {
+  background: var(--btn-num-hover);
+  color: #ffffff;
+}
+
+/* Operators style */
+.btn-operator {
+  background: var(--btn-op-bg);
+  color: var(--btn-op-color);
+}
+
+.btn-operator:hover {
+  background: var(--btn-op-hover);
+}
+
+/* Function style */
+.btn-function {
+  background: var(--btn-fn-bg);
+  color: var(--btn-fn-color);
+}
+
+.btn-function:hover {
+  background: var(--btn-fn-hover);
+}
+
+/* Clear style */
+.btn-clear {
+  background: var(--btn-danger-bg);
+  color: var(--btn-danger-color);
+}
+
+.btn-clear:hover {
+  background: var(--btn-danger-hover);
+}
+
+/* Backspace button style */
+.btn-back {
+  background: var(--btn-danger-bg);
+  color: var(--btn-danger-color);
+}
+
+.btn-back:hover {
+  background: var(--btn-danger-hover);
+}
+
+/* Equals button style */
+.btn-equals {
+  background: var(--btn-eq-bg);
+  color: var(--btn-eq-color);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.btn-equals:hover {
+  background: var(--btn-eq-hover);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-equals:active {
+  transform: translateY(1px) scale(0.95);
+}
+
+/* Key Active (Keyboard interaction highlight) */
+.btn input[type="button"].key-active {
+  background: var(--keyboard-active) !important;
+  color: #ffffff !important;
+  transform: scale(0.9) !important;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.6) !important;
+}
+
+/* Keyboard hint bar */
+.keyboard-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.keyboard-icon {
+  font-size: 14px;
+}
+
+.hint-text {
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  body {
+    padding: 12px;
+  }
+
+  .calculator-container {
+    gap: 15px;
+  }
+
+  .title h1 {
+    font-size: 22px;
+  }
+
+  .main {
+    border-radius: 20px;
+    padding: 18px;
+  }
+
+  .display-wrapper {
+    padding: 12px 16px;
+  }
+
+  .display-wrapper input[type="text"] {
+    font-size: 30px;
+  }
+
+  .btn {
+    gap: 8px;
+  }
+
+  .btn input[type="button"] {
+    height: 52px;
+    border-radius: 12px;
+    font-size: 18px;
+  }
+}
