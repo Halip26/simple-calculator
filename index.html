@@ -1,11 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
     <title>Simple Calculator by Mr. Halip</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="calculator.png" type="image/x-icon" />
+
     <!-- Google Fonts for modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +26,7 @@
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Simple Calculator by Mr. Halip: A fast, easy-to-use online calculator for quick calculations. Free and accessible on any device."
+      content="Simple Calculator by Mr. Halip: A fast, responsive, and beautiful online calculator. Features theme toggle, Google-like history, and instant calculations."
     />
     <link rel="canonical" href="https://halip26.github.io/simple-calculator/" />
 
@@ -30,7 +34,7 @@
     <meta property="og:title" content="Simple Calculator by Mr. Halip" />
     <meta
       property="og:description"
-      content="A fast, easy-to-use online calculator for quick calculations. Free and accessible on any device."
+      content="A fast, responsive, and beautiful online calculator. Features theme toggle, Google-like history, and instant calculations."
     />
     <meta property="og:type" content="website" />
     <meta
@@ -50,7 +54,7 @@
     <meta name="twitter:title" content="Simple Calculator by Mr. Halip" />
     <meta
       name="twitter:description"
-      content="A fast, easy-to-use online calculator for quick calculations. Free and accessible on any device."
+      content="A fast, responsive, and beautiful online calculator. Features theme toggle, Google-like history, and instant calculations."
     />
     <meta
       name="twitter:image"
@@ -76,136 +80,106 @@
         </h1>
       </header>
 
-      <main class="main">
-        <div class="display-wrapper">
-          <input placeholder="0" type="text" id="inputResult" readonly />
-        </div>
-        <div class="btn">
-          <input type="button" value="C" onclick="Clear()" class="btn-clear" />
-          <input
-            type="button"
-            value="%"
-            onclick="Solve('%')"
-            class="btn-function"
-          />
-          <input
-            type="button"
-            value="&larr;"
-            onclick="Back()"
-            class="btn-back"
-          />
-          <input
-            type="button"
-            value="/"
-            onclick="Solve('/')"
-            class="btn-operator"
-          />
-
-          <input
-            type="button"
-            value="7"
-            onclick="Solve('7')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="8"
-            onclick="Solve('8')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="9"
-            onclick="Solve('9')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="x"
-            onclick="Solve('*')"
-            class="btn-operator"
-          />
-
-          <input
-            type="button"
-            value="4"
-            onclick="Solve('4')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="5"
-            onclick="Solve('5')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="6"
-            onclick="Solve('6')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="-"
-            onclick="Solve('-')"
-            class="btn-operator"
-          />
-
-          <input
-            type="button"
-            value="1"
-            onclick="Solve('1')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="2"
-            onclick="Solve('2')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="3"
-            onclick="Solve('3')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="+"
-            onclick="Solve('+')"
-            class="btn-operator"
-          />
-
-          <input
-            type="button"
-            value="00"
-            onclick="Solve('00')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="0"
-            onclick="Solve('0')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="."
-            onclick="Solve('.')"
-            class="btn-number"
-          />
-          <input
-            type="button"
-            value="="
-            onclick="Result()"
-            class="btn-equals"
-          />
+      <main class="calculator-card">
+        <!-- Top bar with logo and theme toggle -->
+        <div class="calc-header">
+          <span class="calc-logo">Calculator</span>
+          <button
+            id="themeToggle"
+            class="theme-toggle-btn"
+            aria-label="Toggle theme"
+          >
+            <!-- Sun Icon (shows in Dark Mode) -->
+            <svg
+              class="sun-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon Icon (shows in Light Mode) -->
+            <svg
+              class="moon-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
         </div>
 
+        <!-- Google-like Display Screen -->
+        <div class="display-screen">
+          <div class="expression-history" id="expressionHistory"></div>
+          <div class="main-display" id="mainDisplay">0</div>
+        </div>
+
+        <!-- Button Grid -->
+        <div class="btn" id="btnContainer">
+          <button data-action="clear" class="btn-clear">C</button>
+          <button data-val="%" class="btn-function">%</button>
+          <button data-action="back" class="btn-back" aria-label="Backspace">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"
+              ></path>
+              <line x1="18" y1="9" x2="12" y2="15"></line>
+              <line x1="12" y1="9" x2="18" y2="15"></line>
+            </svg>
+          </button>
+          <button data-val="/" class="btn-operator">÷</button>
+
+          <button data-val="7" class="btn-number">7</button>
+          <button data-val="8" class="btn-number">8</button>
+          <button data-val="9" class="btn-number">9</button>
+          <button data-val="*" class="btn-operator">×</button>
+
+          <button data-val="4" class="btn-number">4</button>
+          <button data-val="5" class="btn-number">5</button>
+          <button data-val="6" class="btn-number">6</button>
+          <button data-val="-" class="btn-operator">−</button>
+
+          <button data-val="1" class="btn-number">1</button>
+          <button data-val="2" class="btn-number">2</button>
+          <button data-val="3" class="btn-number">3</button>
+          <button data-val="+" class="btn-operator">+</button>
+
+          <button data-val="00" class="btn-number">00</button>
+          <button data-val="0" class="btn-number">0</button>
+          <button data-val="." class="btn-number">.</button>
+          <button data-action="result" class="btn-equals">=</button>
+        </div>
+
+        <!-- Keyboard Hint -->
         <div class="keyboard-hint">
           <span class="keyboard-icon">⌨️</span>
           <span class="hint-text"
-            >Keyboard enabled: 0-9, +, -, *, /, Enter, Esc, Backspace</span
+            >Keyboard: 0-9, +, -, *, /, Enter, Esc, Backspace</span
           >
         </div>
       </main>
